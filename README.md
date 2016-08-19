@@ -32,3 +32,21 @@ Or even passing a block (or another chained/symbol-as-method):
 # equal to:
 [[1, 2, 3], [4, 5, 6]].map { |x| x.map(&:to_f).join('::') }
 ```
+
+Surely, we support operations:
+
+```ruby
+[1.5, 2.5, 3.5].map &chained.round + 10 # => [12, 13, 14]
+[1, 2, 3].map &chained * 100 + 10 # => [110, 210, 310]
+
+# equals to:
+[1.5, 2.5, 3.5].map { |x| x.round + 10 }
+[1, 2, 3].map { |x| x * 100 + 10 }
+```
+
+```ruby
+[[1, 2], [3, 4]].map &chained[1].to_s # => ["2", "4"]
+
+# equals to:
+[[1, 2], [3, 4]].map { |x| x[1].to_s }
+```
