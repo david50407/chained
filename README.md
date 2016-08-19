@@ -6,7 +6,7 @@ Makes `some_context.map &chained.to_something.and_somthing.then_somthing` possib
 
 We can use `&chained` to creating chained-block in simply DSL, like:
 
-```
+```ruby
 [1, 2, 3].map &chained.to_f.to_s # => ["1.0, "2.0", "3.0"]
 
 # equal to:
@@ -17,7 +17,7 @@ We can use `&chained` to creating chained-block in simply DSL, like:
 
 And passing arguments:
 
-```
+```ruby
 %w( 1 10 100 ).map &chained.to_i(2) # => [1, 2, 4]
 
 # equal to:
@@ -26,7 +26,7 @@ And passing arguments:
 
 Or even passing a block (or another chained/symbol-as-method):
 
-```
+```ruby
 [[1, 2, 3], [4, 5, 6]].map &chained.map(&:to_f).join('::') # => ["1.0::2.0::3.0", "4.0::5.0::6.0"]
 
 # equal to:
