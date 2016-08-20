@@ -2,6 +2,31 @@
 
 Makes `some_context.map &chained.to_something.and_somthing.then_somthing` possible and semantic!
 
+## Installation
+
+Install gem with:
+
+```bash
+gem install chained
+```
+
+Or with [Bundler](http://bundler.io), in Gemfile:
+
+```ruby
+source 'https://rubygems.org' # or other mirror
+
+gem 'chained'
+```
+
+then run `bundle install`.
+
+## Preparation
+
+```ruby
+require 'chained'
+# require './path/chained' # if you downloaded the source
+```
+
 ## Usage
 
 We can use `&chained` to creating chained-block in simply DSL, like:
